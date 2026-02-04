@@ -103,6 +103,19 @@ int main()
     //std::sort(arrayCpp.rbegin(), arrayCpp.rend());
     //std::sort(vectorCpp.rbegin(), vectorCpp.rend());
 
+     cout << "Scrivi il numero che vuoi cercare:" << endl;
+    int numeroDaCercare;
+    cin >> numeroDaCercare;
+
+    auto risultato = std::find_if(vectorCpp.begin(), vectorCpp.end(), [numeroDaCercare](int x)
+    {
+        if (x == numeroDaCercare)
+            return true;
+        return false;
+    }); //find_if fa un ciclo finché non trova il primo elemento che soddisfa la condizione. utilizzo una funzione lambda (funzione che non esiste al di furoi del find_if) che restituisce true se l'elemento è == a 50. find_if restituisce un iterator che vale vectorCpp.end() + 1 se non trova nulla. le [] servono per passare variabili esterne alla lambda
+
+    cout << "Elemento trovato con find_if: " << *risultato << endl; //devo dereferenziare l'iterator per ottenere il valore, sono come dei puntatori
+
     cout << "Array ordinato in modo inverso con std::vector: " << endl;
     print_vector_elements(vectorCpp);
 
