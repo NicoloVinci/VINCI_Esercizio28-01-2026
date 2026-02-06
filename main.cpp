@@ -60,18 +60,18 @@ bool nonNegative(int array[], int dim)
 
 void print_array_elements(std::array<int, 10> &arrayCpp)
 {
-    for (int i = 0; i < arrayCpp.size(); i++)
+    for (int i : arrayCpp)
     {
-        cout << arrayCpp[i] << " ";
+        cout << i << " ";
     }
     cout << endl;
 }
 
 void print_vector_elements(std::vector<int> &vectorCpp)
 {
-    for (int i = 0; i < vectorCpp.size(); i++)
+    for (int i : vectorCpp)
     {
-        cout << vectorCpp[i] << " ";
+        cout << i << " ";
     }
     cout << endl;
 }
@@ -124,9 +124,9 @@ int main()
     bool isNonNegative = nonNegative(array, DIM);
 
     cout << "Array ordinato: " << endl;
-    for (int i = 0; i < DIM; i++)
+    for (int i : array)
     {
-        cout << array[i] << " ";
+        cout << i << " ";
     }
     cout << endl;
 
